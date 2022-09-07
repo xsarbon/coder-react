@@ -7,7 +7,7 @@ function NavBar() {
         <div className='nav'>
             <div className='tamanio'>
                 <img className='logo' src={logo} ></img>
-                <h1 className='titulo'>Electrolandia</h1>
+                <h1 className='titulo'>Mi tienda</h1>
                 <div className='links'>
                     <a className='etiqueta' href="#">Inicio</a>
                     <a className='etiqueta' href="#">Notebooks</a>
