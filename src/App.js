@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer stock={10} initial={1} onAdd={() => { }} />
     </>
   )
 }
