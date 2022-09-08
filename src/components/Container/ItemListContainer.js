@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import './styles.css'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import { SweetAlertIcon, SweetAlertOptions, SweetAlertResult } from 'sweetalert2'
+
 
 function ItemListContainer({ initial, stock, onAdd }) {
 
@@ -13,6 +17,15 @@ function ItemListContainer({ initial, stock, onAdd }) {
     const aumentarStock = () => countS >= stock ? console.log("agregue cantidades") : setCountS(countS + 1);
     console.log(countS)
 
+
+    const alerta = () => {
+        Swal.fire({
+            title: 'Felicidades!',
+            text: 'Agregaste los productos al carrito',
+            icon: 'success',
+            confirmButtonText: 'Genial!'
+        })
+    }
     return (
         <div className="container">
             <div className="card">
@@ -29,9 +42,10 @@ function ItemListContainer({ initial, stock, onAdd }) {
                         bajarStock();
                     }}>+</button>
                 </div>
-                <button className="add">Agregar al carrito</button>
+                <button onClick={alerta} className="add">Agregar al carrito</button>
             </div>
         </div >
+
     );
 }
 
