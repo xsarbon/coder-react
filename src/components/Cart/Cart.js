@@ -7,6 +7,6 @@ function Cart() {
             <ShoppingCartRoundedIcon color="primary" fontSize="large" />
         </div>
     );
-    }
+}
 
 export default Cart;

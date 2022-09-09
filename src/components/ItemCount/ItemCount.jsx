@@ -6,15 +6,15 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { SweetAlertIcon, SweetAlertOptions, SweetAlertResult } from 'sweetalert2'
 
 
-function ItemListContainer({ initial, stock, onAdd }) {
+function ItemCount({ initial, stock, onAdd }) {
 
     const [count, setCount] = useState(initial);
     const [countS, setCountS] = useState(stock - 1);
     const aumentar = () => count >= stock ? console.log("supera el stock disponible") : setCount(count + 1);
-    const restar = () => count <= 0 ? console.log("es muy chico") : setCount(count - 1);
+    const restar = () => count <= 1 ? console.log("es muy chico") : setCount(count - 1);
     console.log(count)
     const bajarStock = () => count >= stock ? console.log("supera el stock disponible") : setCountS(countS - 1)
-    const aumentarStock = () => countS >= stock ? console.log("agregue cantidades") : setCountS(countS + 1);
+    const aumentarStock = () => countS >= stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
     console.log(countS)
 
 
@@ -50,4 +50,4 @@ function ItemListContainer({ initial, stock, onAdd }) {
 }
 
 
-export default ItemListContainer
+export default ItemCount
