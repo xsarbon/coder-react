@@ -31,13 +31,13 @@ function ItemCount({ initial, stock, onAdd }) {
             <div className="card">
                 <p className="image"></p>
                 <div className="buttons">
-                    <button onClick={() => {
+                    <button className="restar" onClick={() => {
                         restar();
                         aumentarStock();
                     }}>-</button>
                     <p>{count}</p>
                     <p>de {countS} disponible</p>
-                    <button onClick={() => {
+                    <button className="aumentar" onClick={() => {
                         aumentar();
                         bajarStock();
                     }}>+</button>
