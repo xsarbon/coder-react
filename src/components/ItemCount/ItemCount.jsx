@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import './styles.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-
-import { SweetAlertIcon, SweetAlertOptions, SweetAlertResult } from 'sweetalert2'
+import products from "../utils/products";
 
 
 function ItemCount({ initial, stock, onAdd }) {
