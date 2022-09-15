@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className='containerCards'>
+      <div className='main'>
         <ItemListContainer />
       </div>
       <br /><br /><br />

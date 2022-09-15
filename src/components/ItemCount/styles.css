@@ -1,99 +1,348 @@
-.container{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    height: 45vh;
-    width: 30vh;
-    background-color: rgb(234, 234, 234);
-    margin-top: 20px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 0px 0px 0px 0px rgba(46,46,46,0.31);
-    -webkit-box-shadow: 0px 0px 28px 0px rgba(46,46,46,0.31);
-    -moz-box-shadow: 0px 10px 28px 3px rgba(46,46,46,0.31);
+@media (max-width: 600px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        width: 300px;margin: auto;
+        margin-top: 30px;
+        align-items: center;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        height: 500px;
+        border-radius: 7px;
+        margin: 15px;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+-webkit-box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+    }
+    img{
+        width: 300px;
+        border-radius: 7px 7px 0 0;
+        background-color: white;
+    }
+    .containerBtn{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 200px;
+        justify-content: space-around;
+        text-align: center;
+        background-color: rgba(225, 225, 225, 0.633);
+    }
+    .producto{
+        font-size: 17px;
+        color: black;
+    }
+    .stock{
+        font-size: 15px;
+        color: black;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .restar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(255, 0, 0);
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(255, 0, 0);
+        border-radius: 20px;
+        transition: all 0.2s;
+    }
+    .restar:hover{
+        color: white;
+        background-color: rgb(192, 0, 0);
+        cursor: pointer;
+        border: none;
+    }
+    .aumentar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(42, 165, 108);
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(42, 165, 108);
+        border-radius: 20px;
+        padding: 0;
+    }
 
-}
-.image{
-    height: 30vh;
-    width: 30vh;
-}
-.buttons{
-    display: flex;
-    flex-direction: row;
-    width: 150px;
-    justify-content: space-between;
+    .aumentar:hover{
+        color: white;
+        background-color: rgb(42, 165, 108);
+        cursor: pointer;
+        border: none;
+    }
+
+    .initial{
+        color: black;
+        font-size: 20px;
+    }
+    .add{
+        width: 220px;
+        height: 30px;
+        border-radius: 5px;
+        margin: auto;
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(0, 97, 162);
+        color: rgb(0, 70, 117);
+        transition: all 0.3s;
+        cursor: pointer;
+        margin-bottom: 7px;
+    }
+    .add:hover{
+        color: white;
+        background-color: rgb(0, 97, 162);
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 }
 
-.restar{
-    width: 30px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: transparent;
-    border: solid 0.5px;
-    border-color: rgba(255, 0, 0, 0.574);
-    margin: auto;
-    color: rgba(255, 0, 0, 0.574);
-    transition: all 0.17s;
-    cursor: pointer;
-    font-size: 25px;
-    text-align: center;
-    margin: auto;
-}
-.restar:hover{
-    background-color: rgba(255, 0, 0, 0.574);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.17s;
+
+@media (max-width: 1200px) {
+    .main{
+        display: flex;
+        flex-direction: row;
+        width: 800px;
+        margin: auto;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 370px;
+        height: 600px;
+        border-radius: 7px;
+        margin: 15px;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+-webkit-box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.44);
+align-items: center;
+    }
+    img{
+        width: 370px;
+        border-radius: 7px 7px 0 0;
+        background-color: white;
+    }
+    .containerBtn{
+        display: flex;
+        flex-direction: column;
+        width: 370px;
+        height: 230px;
+        justify-content: space-around;
+        text-align: center;
+        background-color: rgba(225, 225, 225, 0.633);
+    }
+    .producto{
+        font-size: 20px;
+        color: black;
+    }
+    .stock{
+        font-size: 17px;
+        color: black;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .restar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(255, 0, 0);
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(255, 0, 0);
+        border-radius: 20px;
+        transition: all 0.2s;
+        transform: translateY(-10px);
+    }
+    .restar:hover{
+        color: white;
+        background-color: rgb(192, 0, 0);
+        cursor: pointer;
+        border: none;
+    }
+    .aumentar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(42, 165, 108);
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(42, 165, 108);
+        border-radius: 20px;
+        padding: 0;
+        transform: translateY(-10px);
+    }
+
+    .aumentar:hover{
+        color: white;
+        background-color: rgb(42, 165, 108);
+        cursor: pointer;
+        border: none;
+    }
+
+    .initial{
+        color: black;
+        font-size: 23px;
+        transform: translateY(-10px);
+    }
+    .add{
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        margin: auto;
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(0, 97, 162);
+        color: rgb(0, 70, 117);
+        transition: all 0.3s;
+        cursor: pointer;
+        margin-bottom: 7px;
+    }
+    .add:hover{
+        color: white;
+        background-color: rgb(0, 97, 162);
+        transform: scale(1.1);
+        cursor: pointer;
+        
+    }
 }
 
-.aumentar{
-    width: 30px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: transparent;
-    border: solid 0.5px;
-    border-color: rgba(47, 255, 99, 0.781);
-    margin: auto;
-    color: rgba(47, 255, 99, 0.781);
-    transition: all 0.17s;
-    cursor: pointer;
-    font-size: 25px;
-    text-align: center;
-    margin: auto;
-}
-.aumentar:hover{
-    background-color: rgba(47, 255, 99, 0.781);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.17s;
-}
 
-.add{
-    width: 150px;  
-    height: 40px;
-    border-radius: 10px;
-    border: solid 1px;
-    border-color: rgba(4, 86, 201, 0.767);
-    margin-top: 10px;
-    background-color: transparent;
-    color: rgb(30, 30, 30);
-    cursor: pointer;
-    transition: all 0.17s;
-}
-.add:hover{
-    background-color: rgba(4, 86, 201, 0.767);
-    color: white;
-    border-color: transparent;
-    transition: all 0.17s;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 0px 0px rgba(46,46,46,0.31);
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(46,46,46,0.31);
-    -moz-box-shadow: 0px 10px 20px 3px rgba(46,46,46,0.31);
+
+@media (max-width: 2500px) {
+    .main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1300px;
+        margin: auto;
+        justify-content: center;
+        margin-top: 30px;
+        align-items: center;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 290px;
+        height: 500px;
+        border-radius: 7px;
+        margin: 15px;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.34);
+        -webkit-box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.34);
+        -moz-box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.34);
+    }
+    img{
+        width: 290px;
+        border-radius: 7px 7px 0 0;
+        background-color: white;
+    }
+    .containerBtn{
+        display: flex;
+        flex-direction: column;
+        width: 290px;
+        height: 210px;
+        justify-content: space-around;
+        text-align: center;
+        background-color: rgba(225, 225, 225, 0.633);
+    }
+    .producto{
+        font-size: 16px;
+        color: black;
+    }
+    .stock{
+        font-size: 15px;
+        color: black;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .restar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(255, 0, 0);
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(255, 0, 0);
+        border-radius: 20px;
+        transition: all 0.2s;
+    }
+    .restar:hover{
+        color: white;
+        background-color: rgb(192, 0, 0);
+        cursor: pointer;
+        border: none;
+    }
+    .aumentar{
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(42, 165, 108);
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(42, 165, 108);
+        border-radius: 20px;
+        padding: 0;
+    }
+
+    .aumentar:hover{
+        color: white;
+        background-color: rgb(42, 165, 108);
+        cursor: pointer;
+        border: none;
+    }
+
+    .initial{
+        color: black;
+        font-size: 20px;
+    }
+    .add{
+        width: 220px;
+        height: 50px;
+        border-radius: 5px;
+        margin: auto;
+        background-color: transparent;
+        border: solid 0.5px;
+        border-color: rgb(0, 97, 162);
+        color: rgb(0, 70, 117);
+        transition: all 0.3s;
+        cursor: pointer;
+        margin-bottom: 7px;
+    }
+    .add:hover{
+        color: white;
+        background-color: rgb(0, 97, 162);
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 }

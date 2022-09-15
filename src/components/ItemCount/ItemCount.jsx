@@ -2,18 +2,18 @@ import React from "react";
 import { useState } from "react";
 import './styles.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import products from "../utils/products";
+import ItemList from "../itemList/itemList.jsx"
 
 
-function ItemCount({ initial, stock, onAdd }) {
+function ItemCount({ product }) {
 
-    const [count, setCount] = useState(initial);
-    const [countS, setCountS] = useState(stock - 1);
-    const aumentar = () => count >= stock ? console.log("supera el stock disponible") : setCount(count + 1);
+    const [count, setCount] = useState(product.initial);
+    const [countS, setCountS] = useState(product.stock - 1);
+    const aumentar = () => count >= product.stock ? console.log("supera el stock disponible") : setCount(count + 1);
     const restar = () => count <= 1 ? console.log("es muy chico") : setCount(count - 1);
     console.log(count)
-    const bajarStock = () => count >= stock ? console.log("supera el stock disponible") : setCountS(countS - 1)
-    const aumentarStock = () => countS >= stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
+    const bajarStock = () => count >= product.stock ? console.log("supera el stock disponible") : setCountS(countS - 1)
+    const aumentarStock = () => countS >= product.stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
     console.log(countS)
 
 
