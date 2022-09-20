@@ -14,6 +14,7 @@ const Item = ({ product }) => {
                     <button className="aumentar">+</button>
                 </div>
                 <button className="add">Agregar al carrito</button>
+                <button className="add2">Ver detalle</button>
             </div>
         </div>
 
