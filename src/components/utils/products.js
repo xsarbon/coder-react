@@ -178,6 +178,182 @@ const products = [{
         sizeScreen: "15.6",
         construction: "Plastic"
     }
-}]
+
+}, {
+    id: 13,
+    image: "https://www.soscomputacion.com.ar/25127-thickbox_default/parlante-portatil-bluetooth-jbl-clip-4-5w.jpg",
+    product: "PARLANTE PORTATIL JBL CLIP 4",
+    category: "audio",
+    description: "Parlante portatil, recargable JBL Clip 4, con Bluetooth",
+    price: 19000,
+    brand: "JBL",
+    stock: 14,
+    initial: 1,
+    config: {
+        color: ['Rojo'],
+        construction: "Plastico y tela"
+    }
+}, {
+    id: 14,
+    image: "https://images.fravega.com/f1000/f20792e0c9182452979637ae6785999a.jpg",
+    product: "PARLANTE PORTATIL SONY EXTRA BASS XB13",
+    category: "audio",
+    description: "Parlante portatil, recargable Soy Extra Bass XB13, con Bluetooth",
+    price: 15000,
+    brand: "Sony",
+    stock: 7,
+    initial: 1,
+    config: {
+        color: ['Negro'],
+        construction: "Plastic"
+    }
+}, {
+    id: 15,
+    image: "https://images.fravega.com/f1000/95d11723d52ea94a869d3e744825e257.jpg",
+    product: "AURICULARES INALAMBRICOS SONY",
+    category: "audio",
+    description: "Auriculares inalambricos Sony WH-CH510 con Bluetooth y Noise Cancelation",
+    price: 9000,
+    brand: "Sony",
+    stock: 19,
+    initial: 1,
+    config: {
+        color: ['Negro'],
+        construction: "Plastico"
+    }
+}, {
+    id: 16,
+    image: "https://images.fravega.com/f1000/ac9a31f8135a4a6f8c6bf6f3feef1bbc.jpg",
+    product: "AURICULARES SONY XB550APR",
+    category: "audio",
+    description: "Auriculares con cable Sony Extra Bass",
+    price: 5900,
+    brand: "Sony",
+    stock: 18,
+    initial: 1,
+    config: {
+        color: ['Rojo'],
+        construction: "Plastico"
+    }
+}, {
+    id: 17,
+    image: "https://stylewatch.vtexassets.com/arquivos/ids/215443/Parlante_JBL_JBLCHARGE5BLU_02.jpg?v=637910045371070000",
+    product: "PARLANTE PORTATIL JBL CHARGE 5",
+    category: "audio",
+    description: "Parlante portatil, recargable JBL Charge 5, con Bluetooth",
+    price: 52000,
+    brand: "JBL",
+    stock: 6,
+    initial: 1,
+    config: {
+        color: ['Azul oscuro'],
+        construction: "Plastico y tela"
+    }
+}, {
+    id: 18,
+    image: "https://www.jbl.com.ar/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw48f5d684/JBL_Go2_Hero_Midnight_Black-1605x1605px.png?sw=537&sfrm=png",
+    product: "PARLANTE PORTATIL JBL GO 2",
+    category: "audio",
+    description: "Parlante portatil, recargable JBL GO 2, con Bluetooth",
+    price: 9000,
+    brand: "JBL",
+    stock: 28,
+    initial: 1,
+    config: {
+        color: ['Rojo'],
+        construction: "Plastico y tela"
+    }
+}, {
+    id: 19,
+    image: "https://stylewatch.vtexassets.com/arquivos/ids/204909/parlante-jbl-go-3-teal-jblgo3teal_01.jpg?v=637740774912700000",
+    product: "PARLANTE PORTATIL JBL GO 3",
+    category: "audio",
+    description: "Parlante portatil, recargable JBL GO 3, con Bluetooth",
+    price: 11900,
+    brand: "JBL",
+    stock: 14,
+    initial: 1,
+    config: {
+        color: ['Rojo'],
+        construction: "Plastico y tela"
+    }
+}, {
+    id: 20,
+    image: "https://images.fravega.com/f1000/a31063c7a260d8f902dc54fee1b128e3.jpg",
+    product: "PARLANTE PORTATIL JBL CLIP 4",
+    category: "hogar",
+    description: "Lavarropas Drean, 1200RPM, Drean NEXT 8.12 ECO",
+    price: 125000,
+    brand: "Drean",
+    stock: 13,
+    initial: 1,
+    config: {
+        color: ['Blanco'],
+        construction: "Acero",
+        revoluciones: 1200
+    }
+}, {
+    id: 21,
+    image: "https://hendel-r7d8odghj1.stackpathdns.com/media/catalog/product/cache/0c3e9ac8430b5a3e77d1544ae1698a10/3/8/38393-1.jpg",
+    product: "LAVARROPAS LG 9KG CARGA FRONTAL",
+    category: "hogar",
+    description: "Lavarropas LG, 9kg de peso, con carga frontal",
+    price: 196000,
+    brand: "LG",
+    stock: 5,
+    initial: 1,
+    config: {
+        color: ['Blanco'],
+        construction: "Acero",
+        revoluciones: 1500
+    }
+}, {
+    id: 22,
+    image: "https://images.fravega.com/f1000/ea0124afb833764e3470c266596a0df1.jpg",
+    product: "LAVAVAJILLAS LG D1455CF 14C",
+    category: "hogar",
+    description: "Lavavajillas lg para hogar, 14 cubiertos, con panel de control tactil y conexion wifi",
+    price: 135000,
+    brand: "LG",
+    stock: 7,
+    initial: 1,
+    config: {
+        color: ['Plateado'],
+        construction: "Acero inoxidable",
+        cubiertos: 14,
+        litros: 9
+    }
+}, {
+    id: 23,
+    image: "https://images.fravega.com/f1000/799a8ceaf934954792eea028e9b44cfd.jpg",
+    product: "SMART TV SAMSUNG 4K UHD UN55AU7000",
+    category: "hogar",
+    description: "Lavarropas Drean, 1200RPM, Drean NEXT 8.12 ECO",
+    price: 149000,
+    brand: "Samsung",
+    stock: 43,
+    initial: 1,
+    config: {
+        color: ['Negro'],
+        construction: "Plastico",
+        resolucion: "Ultra HD"
+    }
+}, {
+    id: 24,
+    image: "https://www.lg.com/ar/images/televisores/md06215136/gallery/DM-01.jpg",
+    product: "SMART TV LG 32 PULGADAS",
+    category: "hogar",
+    description: "Smart tv lg con wifi",
+    price: 50000,
+    brand: "Drean",
+    stock: 10,
+    initial: 1,
+    config: {
+        color: ['Negro'],
+        construction: "Plastico",
+    }
+}
+
+]
 
 export default products

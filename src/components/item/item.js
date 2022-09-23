@@ -1,5 +1,5 @@
 import products from "../utils/products"
-import ItemCount from "../ItemCount/ItemCount"
+import { NavLink } from "react-router-dom"
 
 const Item = ({ product }) => {
     return (
@@ -14,7 +14,8 @@ const Item = ({ product }) => {
                     <button className="aumentar">+</button>
                 </div>
                 <button className="add">Agregar al carrito</button>
-                <button className="add2">Ver detalle</button>
+                <NavLink className="add2cont" to={`product/${product.id}`}><button className="add2">Ver detalle</button></NavLink>
+
             </div>
         </div>
 

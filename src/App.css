@@ -1,6 +1,5 @@
 body{
   width: 100%;
-  height: 10%;
   background-color: white;
 }
 .nav{
@@ -16,9 +15,9 @@ body{
 .tamanio{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 1300px;
   margin: auto;
 
 }
@@ -30,26 +29,49 @@ body{
 h1{
   color: white;
 }
+
+.links{
+  display: flex;
+  height: 50px;
+  margin-top: -25px;
+  width: 600px;
+  align-items: flex-start;
+}
+
 .etiqueta{
   font-size: 20px;
-  padding: 4%;
   text-decoration: none;
   width: 100%;
   cursor: pointer;
   color: white;
   border-radius: 3px;
 }
-.carrito{
-  width: 2%;
+.etiquetaa{
+  font-size: 20px;
+  padding: 3%;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+  height: 15px;
+  align-items: center;
+  text-align: center;
 }
-.links a:hover{
+.cart{
+  width: 2%;
+
+}
+.etiquetaa:hover{
   background-color: aliceblue;
-  color: rgb(0, 71, 129);
   border-radius: 6px;
   box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
 -webkit-box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
 -moz-box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
   transition: ease 0.3s;
+}
+.etiquetaa:hover a{
+  color: rgb(0, 71, 129);
 }
 img{
   border-radius: 20px 20px 0 0;

@@ -4,7 +4,7 @@ import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 function Cart() {
     return (
         <div>
-            <ShoppingCartRoundedIcon color="primary" fontSize="large" />
+            <ShoppingCartRoundedIcon className="cart" color="primary" fontSize="large" />
         </div>
     );
 }
