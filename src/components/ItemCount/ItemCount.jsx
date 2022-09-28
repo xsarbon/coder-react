@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import './styles.css'
-import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 
-function ItemCount({ product }) {
+function ItemCount({ product, onAdd }) {
 
     const [count, setCount] = useState(product.initial);
     const [countS, setCountS] = useState(product.stock - 1);
@@ -15,15 +14,6 @@ function ItemCount({ product }) {
     const aumentarStock = () => countS >= product.stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
     console.log(countS)
 
-
-    const alerta = () => {
-        Swal.fire({
-            title: 'Felicidades!',
-            text: 'Agregaste los productos al carrito',
-            icon: 'success',
-            confirmButtonText: 'Genial!'
-        })
-    }
     return (
 
         <div className="containerbtns">
@@ -33,13 +23,13 @@ function ItemCount({ product }) {
                     aumentarStock();
                 }}>-</button>
                 <p>{count}</p>
-                <p>de {countS} disponible</p>
+                <p>de<b> {countS}</b> disponible</p>
                 <button className="aumentar" onClick={() => {
                     aumentar();
                     bajarStock();
                 }}>+</button>
             </div>
-            <button className="itemAdd">Agregar al carrito</button>
+            <button className="itemAdd" onClick={onAdd}>Agregar al carrito</button>
         </div>
 
     );
