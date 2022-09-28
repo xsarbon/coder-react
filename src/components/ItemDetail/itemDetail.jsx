@@ -1,3 +1,5 @@
+import ItemCount from "../ItemCount/itemCount"
+
 const ItemDetail = ({ listProduct }) => {
     console.log(listProduct)
     return (
@@ -8,15 +10,7 @@ const ItemDetail = ({ listProduct }) => {
                     <h2 className="producto">{listProduct.product}</h2>
                     <p className="description">{listProduct.description}</p>
                     <h3 className="precio">${listProduct.price}</h3>
-
-
-                    <div className="containerbtns">
-                        <div className="buttons">
-                            <button className="restar">-</button>
-                            <p className="stock"><b>{listProduct.stock}</b> Disponibles</p>
-                            <button className="aumentar">+</button></div>
-                        <button className="itemAdd">Agregar al carrito</button>
-                    </div>
+                    <ItemCount product={listProduct} />
 
                 </section>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import '../ItemCount/ItemCount'
+import '../ItemCount/itemCount'
 import products from "../utils/products"
 import ItemList from "../itemList/itemList.jsx"
 import customFetch from '../utils/customFetch';

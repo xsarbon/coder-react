@@ -1,5 +1,5 @@
 import Item from '../item/item'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../ItemCount/itemCount'
 
 const ItemList = ({ listProduct }) => {
     return (

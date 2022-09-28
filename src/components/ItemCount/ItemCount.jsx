@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import './styles.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import ItemList from "../itemList/itemList.jsx"
 
 
 function ItemCount({ product }) {
@@ -26,24 +25,22 @@ function ItemCount({ product }) {
         })
     }
     return (
-        <div className="container">
-            <div className="card">
-                <p className="image"></p>
-                <div className="buttons">
-                    <button className="restar" onClick={() => {
-                        restar();
-                        aumentarStock();
-                    }}>-</button>
-                    <p>{count}</p>
-                    <p>de {countS} disponible</p>
-                    <button className="aumentar" onClick={() => {
-                        aumentar();
-                        bajarStock();
-                    }}>+</button>
-                </div>
-                <button onClick={alerta} className="add">Agregar al carrito</button>
+
+        <div className="containerbtns">
+            <div className="buttons">
+                <button className="restar" onClick={() => {
+                    restar();
+                    aumentarStock();
+                }}>-</button>
+                <p>{count}</p>
+                <p>de {countS} disponible</p>
+                <button className="aumentar" onClick={() => {
+                    aumentar();
+                    bajarStock();
+                }}>+</button>
             </div>
-        </div >
+            <button className="itemAdd">Agregar al carrito</button>
+        </div>
 
     );
 }
