@@ -14,7 +14,7 @@ const Item = ({ product }) => {
                     <button className="aumentar">+</button>
                 </div>
                 <button className="add">Agregar al carrito</button>
-                <NavLink className="add2cont" to={`product/${product.id}`}><button className="add2">Ver detalle</button></NavLink>
+                <NavLink className="add2cont" to={`/product/${product.id}`}><button className="add2">Ver detalle</button></NavLink>
 
             </div>
         </div>
