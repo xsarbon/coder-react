@@ -22,7 +22,6 @@ const ItemDetail = ({ listProduct }) => {
                             <NavLink to="/Cart"><button className="irAlCarrito">Ir al Carrito</button></NavLink>
                             : <ItemCount product={listProduct} onAdd={onAdd} />
                     }
-
                 </section>
             </div>
 
