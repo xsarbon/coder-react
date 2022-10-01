@@ -9,10 +9,11 @@ function ItemCount({ product, onAdd }) {
     const [countS, setCountS] = useState(product.stock - 1);
     const aumentar = () => count >= product.stock ? console.log("supera el stock disponible") : setCount(count + 1);
     const restar = () => count <= 1 ? console.log("es muy chico") : setCount(count - 1);
-    console.log(count)
+
     const bajarStock = () => count >= product.stock ? console.log("supera el stock disponible") : setCountS(countS - 1)
     const aumentarStock = () => countS >= product.stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
-    console.log(countS)
+
+    const hundleClick = () => onAdd(count)
 
     return (
 
@@ -29,7 +30,7 @@ function ItemCount({ product, onAdd }) {
                     bajarStock();
                 }}>+</button>
             </div>
-            <button className="itemAdd" onClick={onAdd}>Agregar al carrito</button>
+            <button className="itemAdd" onClick={hundleClick}>Agregar al carrito</button>
         </div>
 
     );

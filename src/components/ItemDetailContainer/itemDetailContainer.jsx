@@ -10,16 +10,18 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { id } = useParams()
-    console.log(typeof id)
 
     useEffect(() => {
         setLoading(true)
         customFetch(products)
             .then(res => {
                 setLoading(false)
-                setListProduct(res.find(item => item.id === parseInt(id)))
+                setListProduct(res.find(item => item.id === parseInt(id)));
+
             })
     }, [])
+
+
 
 
     return (
