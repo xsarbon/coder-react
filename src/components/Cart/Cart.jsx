@@ -1,23 +1,36 @@
 import { useCartContext } from "../../context/CartContext"
+import "../Cart/CartStyles.css"
 
 const Cart = () => {
-    const { cartList, totalPrice } = useCartContext()
+    const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
     const itemsList = cartList.map(prod =>
-        <li key={prod.id}>
-            <div>
-                <img src={prod.image}></img>
-                <h2>{prod.product}</h2>
-                <p><b>${prod.price}</b></p>
-                <p>{prod.quantity} en carrito</p>
+        <li className="containerProd" key={prod.id}>
+            <div className="containerMainProd" >
+                <img className="imgProd" src={prod.image}></img>
+                <div className="container">
+                    <div><h2 className="nameProd" >{prod.product}</h2></div>
+                    <div className="containerPrice">
+                        <p className="priceProd" ><b>${prod.price}</b></p>
+                        <p className="quantityProd" >{prod.quantity} en carrito</p>
+                    </div>
+                </div>
+                <div className="containerRemove"><button className="removerProd" onClick={() => removeProduct(prod.id)}>X</button></div>
+
             </div>
         </li>
     )
-    const priceTotal = <li>{totalPrice}</li>
+    const priceTotal = <li className="priceTotal" >
+        <div className="price"><h2 className="priceTotal">Total: ${totalPrice()}</h2></div>
+        <div className="clearCart"><button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button></div>
+
+    </li>
+
     return (
-        <ul>
+        <ul className="ListaProductos">
             {itemsList}
             {priceTotal}
         </ul>
+
     )
 }
 
