@@ -1,5 +1,6 @@
 import { useCartContext } from "../../context/CartContext"
 import "../Cart/CartStyles.css"
+import { NavLink } from "react-router-dom"
 
 const Cart = () => {
     const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
@@ -22,13 +23,23 @@ const Cart = () => {
     const priceTotal = <li className="priceTotal" >
         <div className="price"><h2 className="priceTotal">Total: ${totalPrice()}</h2></div>
         <div className="clearCart"><button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button></div>
-
     </li>
+    const noProducts = <li className="priceTotal">
+        <div className="price">
+            <h2 className="priceTotal"> No hay productos en el carrito</h2>
+        </div>
+        <div className="clearCart">
+            <NavLink to={"/"}>
+                <button className="inicio">Agregar Productos</button>
+            </NavLink >
+        </div>
+    </li>
+
 
     return (
         <ul className="ListaProductos">
             {itemsList}
-            {priceTotal}
+            {cartList.length === 0 ? noProducts : priceTotal}
         </ul>
 
     )

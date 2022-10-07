@@ -81,3 +81,31 @@ background-color: rgba(225, 225, 225, 0.633);
     transform: scale(1.04);
     color: white;
 }
+.inicio{
+    width: 180px;
+    height: 40px;
+    background-color: rgb(0, 97, 162);
+    border-style: none;
+    color: white;
+    border-radius: 4px;
+    transition: ease 0.2s;
+    cursor: pointer;
+    font-size:13px;
+}
+.inicio:hover{
+    background-color: rgb(1, 68, 113);
+        transform: scale(1.1);
+        cursor: pointer;
+}
+.totalQuantity{
+    position: absolute;
+    top: 40px;
+    right: 290px;
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-color: rgb(0, 97, 162);
+    border-radius: 50%;
+    text-align: center;
+    align-content: center;
+}
