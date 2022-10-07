@@ -4,11 +4,12 @@ import { NavLink } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 
 function Cart() {
-    const { totalQuantity } = useCartContext()
+    const { totalQuantity, cartList } = useCartContext()
+    const showQuantity = cartList.length === 0 ? <p></p> : <p className="totalQuantity">{totalQuantity()}</p>
     return (
         <NavLink to="/Cart">
             <ShoppingCartRoundedIcon className="cart" color="primary" fontSize="large" />
-            <p className="totalQuantity">{totalQuantity()}</p>
+            {showQuantity}
         </NavLink>
     );
 }
