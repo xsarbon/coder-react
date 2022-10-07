@@ -34,7 +34,7 @@ const Cart = () => {
 
     const noProducts = <li className="priceTotal">
         <div className="price">
-            <h2 className="priceTotal"> No hay productos en el carrito</h2>
+            <h2 className="pricetotal"> No hay productos en el carrito</h2>
         </div>
         <div className="clearCart">
             <NavLink to={"/"}>
