@@ -13,6 +13,7 @@ const Cart = () => {
                     <div className="containerPrice">
                         <p className="priceProd" ><b>${prod.price}</b></p>
                         <p className="quantityProd" >{prod.quantity} en carrito</p>
+                        <p className="pricePerProd"><b>${prod.quantity * prod.price}</b></p>
                     </div>
                 </div>
                 <div className="containerRemove"><button className="removerProd" onClick={() => removeProduct(prod.id)}>X</button></div>
@@ -20,10 +21,17 @@ const Cart = () => {
             </div>
         </li>
     )
-    const priceTotal = <li className="priceTotal" >
-        <div className="price"><h2 className="priceTotal">Total: ${totalPrice()}</h2></div>
-        <div className="clearCart"><button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button></div>
-    </li>
+    const priceTotal =
+        <li className="priceTotal" >
+            <div className="price">
+                <h2 className="priceTotal">Total: ${totalPrice()}</h2>
+            </div>
+            <div className="clearCart">
+                <button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button>
+            </div>
+            <div className="startBuy"><button className="starBuy">Pagar</button></div>
+        </li>
+
     const noProducts = <li className="priceTotal">
         <div className="price">
             <h2 className="priceTotal"> No hay productos en el carrito</h2>

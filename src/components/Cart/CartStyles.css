@@ -64,6 +64,9 @@ background-color: rgba(225, 225, 225, 0.633);
     list-style: none;
     text-align: center;
     align-items: center;
+    box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
+-webkit-box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
+-moz-box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
 }
 .cleanCart{
     width: 180px;
@@ -94,8 +97,8 @@ background-color: rgba(225, 225, 225, 0.633);
 }
 .inicio:hover{
     background-color: rgb(1, 68, 113);
-        transform: scale(1.1);
-        cursor: pointer;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .totalQuantity{
     position: absolute;
@@ -108,4 +111,21 @@ background-color: rgba(225, 225, 225, 0.633);
     border-radius: 50%;
     text-align: center;
     align-content: center;
+}
+.starBuy{
+    width: 180px;
+    height: 40px;
+    background-color: rgba(0, 97, 162, 0.71);
+    border-style: none;
+    color: white;
+    border-radius: 4px;
+    transition: ease 0.2s;
+    cursor: pointer;
+    font-size:13px;
+}
+.starBuy:hover{
+        background-color: rgb(0, 97, 162);
+        transform: scale(1.1);
+        cursor: pointer;
+        color: white;
 }
