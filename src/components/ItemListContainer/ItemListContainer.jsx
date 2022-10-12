@@ -1,5 +1,5 @@
 import React from "react";
-import '../ItemCount/itemCount'
+import '../ItemCount/ItemCount'
 import ItemList from "../itemList/itemList.jsx"
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
