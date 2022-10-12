@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import './styles.css'
+import { db } from "../firebase/firebase"
+import { getDocs, collection } from "firebase/firestore"
 
 
 function ItemCount({ product, onAdd }) {
-
+    const productsCollection = collection(db, 'listProducts')
     const [count, setCount] = useState(product.initial);
     const [countS, setCountS] = useState(product.stock - 1);
     const aumentar = () => count >= product.stock ? console.log("supera el stock disponible") : setCount(count + 1);

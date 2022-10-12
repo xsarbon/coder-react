@@ -1,11 +1,10 @@
 import React from "react";
 import '../ItemCount/itemCount'
-import products from "../utils/products"
 import ItemList from "../itemList/itemList.jsx"
-import customFetch from '../utils/customFetch';
-//import ItemCount from "../ItemCount/ItemCount";//
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import { db } from "../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 
 function ItemListContainer() {
@@ -14,21 +13,49 @@ function ItemListContainer() {
   const [loading, setLoading] = useState(true)
 
   const { category } = useParams()
+  console.log(category)
+
 
 
   useEffect(() => {
-    setLoading(true)
-    customFetch(products)
-      .then(res => {
-        if (category) {
+    const productsCollection = collection(db, 'listProducts')
+
+    if (category) {
+      const q = query(productsCollection, where('category', '==', `${category}`))
+      getDocs(q)
+        .then((data) => {
+          const list = data.docs.map((prod) => {
+            return {
+              ...prod.data(),
+              id: prod.id
+            }
+          })
+
+          setListProduct(list)
+        })
+        .finally(() => {
           setLoading(false)
-          setListProduct(res.filter(prod => prod.category === category))
-        } else {
+        })
+    } else {
+      getDocs(productsCollection)
+        .then((data) => {
+          const list = data.docs.map((prod) => {
+            return {
+              ...prod.data(),
+              id: prod.id
+            }
+          })
+
+          setListProduct(list)
+        })
+        .finally(() => {
           setLoading(false)
-          setListProduct(res)
-        }
-      })
+        })
+    }
   }, [category])
+
+
+
 
   return (
     <>

@@ -57,3 +57,5 @@ export default App                               ------------->      import App 
 export const Dato = () => {return( datos )}      ------------->      import { Dato } from "./Dato"
 
 comienza en itemListContainer, resuelve la promise, la logica y se la pasa a itemList, la cual hace el map y envia esa info al componente item, quien recibe esa informacion y la renderiza
+
+instalar firebase: npm install firebase

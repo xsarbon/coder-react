@@ -1,7 +1,10 @@
-import products from "../utils/products"
 import { NavLink } from "react-router-dom"
+import { db } from "../firebase/firebase"
+import { getDocs, collection } from "firebase/firestore"
 
 const Item = ({ product }) => {
+    const productsCollection = collection(db, 'listProducts')
+    console.log(productsCollection.id)
     return (
         <div className="card">
             <img src={product.image} className="image"></img>

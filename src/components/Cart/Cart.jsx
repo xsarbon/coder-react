@@ -1,8 +1,11 @@
 import { useCartContext } from "../../context/CartContext"
 import "../Cart/CartStyles.css"
 import { NavLink } from "react-router-dom"
+import { db } from "../firebase/firebase"
+import { getDocs, collection } from "firebase/firestore"
 
 const Cart = () => {
+    const productsCollection = collection(db, 'listProducts')
     const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
     const itemsList = cartList.map(prod =>
         <li className="containerProd" key={prod.id}>
@@ -11,7 +14,7 @@ const Cart = () => {
                 <div className="container">
                     <div><h2 className="nameProd" >{prod.product}</h2></div>
                     <div className="containerPrice">
-                        <p className="priceProd" ><b>${prod.price}</b></p>
+                        <p className="priceProd" ><b>${prod.price + ''}</b> </p>
                         <p className="quantityProd" >{prod.quantity} en carrito</p>
                         <p className="pricePerProd"><b>${prod.quantity * prod.price}</b></p>
                     </div>

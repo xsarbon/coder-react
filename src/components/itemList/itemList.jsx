@@ -1,5 +1,7 @@
 import Item from '../item/item'
 import ItemCount from '../ItemCount/itemCount'
+import { db } from "../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemList = ({ listProduct }) => {
     return (

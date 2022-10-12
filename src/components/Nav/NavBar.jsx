@@ -1,7 +1,6 @@
 import logo from '../images/logo.jpg';
 import '../../App.css';
 import Cart from '../CartWidget/Cart'
-
 import { NavLink } from "react-router-dom"
 
 function NavBar() {
@@ -12,7 +11,7 @@ function NavBar() {
                     <img className='logo' src={logo} ></img>
                 </NavLink>
 
-                <h1 className='titulo'>Mi tienda</h1>
+                <h1 className='titulo'>Tienda de tecnologia</h1>
                 <div className='links'>
                     <NavLink className="etiquetaa" to="/">
                         <a className='etiqueta' href="#">Inicio</a>
