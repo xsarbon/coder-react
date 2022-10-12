@@ -1,4 +1,4 @@
-import ItemCount from "../ItemCount/itemCount"
+import ItemCount from "../ItemCount/ItemCount"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
