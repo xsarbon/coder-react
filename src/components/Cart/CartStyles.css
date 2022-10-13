@@ -45,7 +45,7 @@ background-color: rgba(225, 225, 225, 0.633);
     height: 60px;
     background-color: rgba(182, 182, 182, 0.633);
     border-style: none;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: all 0.2s;
     border-radius: 7px;
@@ -54,12 +54,12 @@ background-color: rgba(225, 225, 225, 0.633);
 .removerProd:hover{
     background-color: rgb(208, 2, 2);
     transform: scale(1.1);
+    color: white;
 
 }
 .priceTotal{
     display: flex;
     justify-content: space-around;
-    font-size: 30px;
     background-color: rgba(225, 225, 225, 0.633);
     list-style: none;
     text-align: center;
@@ -76,7 +76,7 @@ background-color: rgba(225, 225, 225, 0.633);
     height: 40px;
     background-color: rgba(182, 182, 182, 0.633);
     border-style: none;
-    color: black;
+    color: rgb(255, 255, 255);
     border-radius: 4px;
     transition: ease 0.2s;
     cursor: pointer;
@@ -102,6 +102,7 @@ background-color: rgba(225, 225, 225, 0.633);
     background-color: rgb(1, 68, 113);
     transform: scale(1.1);
     cursor: pointer;
+    color: white;
 }
 .totalQuantity{
     position: absolute;
@@ -131,4 +132,7 @@ background-color: rgba(225, 225, 225, 0.633);
         transform: scale(1.1);
         cursor: pointer;
         color: white;
+}
+.nameProd{
+    width: 700px;
 }

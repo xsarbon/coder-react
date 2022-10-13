@@ -1,10 +1,9 @@
 import { db } from "../firebase/firebase"
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
 import './formStyles.css'
 import { useCartContext } from "../../context/CartContext"
-import { NavLink } from "react-router-dom";
 
 
 const Formulario = () => {
@@ -12,14 +11,13 @@ const Formulario = () => {
     const total = totalPrice()
     const items = cartList
 
-
-
     const { register, handleSubmit, formState: { errors }, watch } = useForm({
         defaultValues: {
             email: '@gmail.com',
             telephone: '+549'
         }
     })
+
     const onSubmit = (data) => {
         const salesCollection = collection(db, "salesClient");
         addDoc(salesCollection, {
@@ -27,10 +25,23 @@ const Formulario = () => {
             //error solucionado
         })
             .then((res) => {
-                console.log(res.id, "  datos guardados correctamente");
+                console.log("gracias por su compra, su ID de pago es ", res.id, "       datos guardados correctamente");
                 cleanCart();
             })
+
+        const update = items.map((prod) => {
+            const updateStock = doc(db, "listProducts", prod.id)
+            const stock = prod.stock - prod.quantity
+            updateDoc(updateStock, { stock })
+
+            alert("se realizo la compra. El nuevo stock es " + stock)
+        })
+
+
+
     }
+
+
     const includeTel = watch('includeTel');
     return (
         <div className="formPayment">
