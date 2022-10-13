@@ -14,7 +14,6 @@ function ItemCount({ product, onAdd }) {
 
     const bajarStock = () => count >= product.stock ? console.log("supera el stock disponible") : setCountS(countS - 1)
     const aumentarStock = () => countS >= product.stock - 1 ? console.log("agregue cantidades") : setCountS(countS + 1);
-    console.log(count);
 
 
     return (

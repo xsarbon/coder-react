@@ -14,19 +14,19 @@ function NavBar() {
                 <h1 className='titulo'>Tienda de tecnologia</h1>
                 <div className='links'>
                     <NavLink className="etiquetaa" to="/">
-                        <a className='etiqueta' href="#">Inicio</a>
+                        <button className='etiqueta' href="#">Inicio</button>
                     </NavLink>
                     <NavLink className="etiquetaa" to="category/notebooks">
-                        <a className='etiqueta' href="#">Notebooks</a>
+                        <button className='etiqueta' href="#">Notebooks</button>
                     </NavLink>
                     <NavLink className="etiquetaa" to="category/celulares">
-                        <a className='etiqueta' href="#">Celulares</a>
+                        <button className='etiqueta' href="#">Celulares</button>
                     </NavLink>
                     <NavLink className="etiquetaa" to="category/audio">
-                        <a className='etiqueta' href="#">Audio</a>
+                        <button className='etiqueta' href="#">Audio</button>
                     </NavLink>
                     <NavLink className="etiquetaa" to="category/hogar">
-                        <a className='etiqueta' href="#">Hogar</a>
+                        <button className='etiqueta' href="#">Hogar</button>
                     </NavLink>
                 </div>
                 <Cart />

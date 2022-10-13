@@ -239,4 +239,11 @@
     .irAlCarrito:hover{
         background-color: rgb(1, 68, 113);
     }
+    button{
+        background-color: transparent;
+        border-style: none;
+    }
+    button:hover{
+        color: rgb(0, 71, 129);
+    }
 }
