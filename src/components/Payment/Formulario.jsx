@@ -25,7 +25,9 @@ const Formulario = () => {
             //error solucionado
         })
             .then((res) => {
-                console.log("gracias por su compra, su ID de pago es ", res.id, "       datos guardados correctamente");
+                alert("gracias por su compra, su ID de pago es " + res.id + "       datos guardados correctamente");
+                cleanCart();
+                console.log("gracias por su compra, su ID de pago es " + res.id + "       datos guardados correctamente");
                 cleanCart();
             })
 
@@ -34,7 +36,6 @@ const Formulario = () => {
             const stock = prod.stock - prod.quantity
             updateDoc(updateStock, { stock })
 
-            alert("se realizo la compra. El nuevo stock es " + stock)
         })
 
 
