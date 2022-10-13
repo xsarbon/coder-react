@@ -4,10 +4,11 @@ import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
 import './formStyles.css'
 import { useCartContext } from "../../context/CartContext"
+import { NavLink } from "react-router-dom";
 
 
 const Formulario = () => {
-    const { cartList, totalPrice } = useCartContext()
+    const { cartList, totalPrice, cleanCart } = useCartContext()
     const total = totalPrice()
     const items = cartList
 
@@ -25,7 +26,10 @@ const Formulario = () => {
             data, total, items, date: serverTimestamp()
             //error solucionado
         })
-
+            .then((res) => {
+                console.log(res.id, "  datos guardados correctamente");
+                cleanCart();
+            })
     }
     const includeTel = watch('includeTel');
     return (
