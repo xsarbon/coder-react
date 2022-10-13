@@ -18,7 +18,7 @@ const Formulario = () => {
         const salesCollection = collection(db, "salesClient");
         addDoc(salesCollection, {
             data,
-            cartList
+            cartList//al cargar cartList al servidor, da error y no permite cargarlos porque lo toma como una funcion.
         })
 
     }
