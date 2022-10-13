@@ -1,12 +1,13 @@
-import { db } from "../firebase/firebase";
-import { doc, getDoc, collection } from "firebase/firestore";
+import { db } from "../firebase/firebase"
+import { collection, addDoc, serverTimetamp } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
 import './formStyles.css'
+import Cart from "../Cart/Cart"
 
 
 const Formulario = () => {
-
+    const { cartList } = Cart
     const { register, handleSubmit, formState: { errors }, watch } = useForm({
         defaultValues: {
             email: '@gmail.com',
@@ -14,10 +15,14 @@ const Formulario = () => {
         }
     })
     const onSubmit = (data) => {
-        console.log(data)
+        const salesCollection = collection(db, "salesClient");
+        addDoc(salesCollection, {
+            data,
+            cartList
+        })
+
     }
     const includeTel = watch('includeTel');
-
     return (
         <div className="formPayment">
             <h2>Formulario</h2>
@@ -73,6 +78,7 @@ const Formulario = () => {
             </form>
         </div>
     )
+
 }
 
 export default Formulario

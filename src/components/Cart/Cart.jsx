@@ -24,6 +24,7 @@ const Cart = () => {
             </div>
         </li>
     )
+    console.log(typeof cartList);
     const priceTotal =
         <li className="priceTotal" >
             <div className="price">
