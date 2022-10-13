@@ -24,7 +24,7 @@ const Cart = () => {
             </div>
         </li>
     )
-    console.log(typeof cartList);
+
     const priceTotal =
         <li className="priceTotal" >
             <div className="price">
@@ -39,7 +39,6 @@ const Cart = () => {
                 </NavLink>
             </div>
         </li>
-
     const noProducts = <li className="priceTotal">
         <div className="price">
             <h2 className="pricetotal"> No hay productos en el carrito</h2>

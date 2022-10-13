@@ -1,13 +1,18 @@
 import { db } from "../firebase/firebase"
-import { collection, addDoc, serverTimetamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
 import './formStyles.css'
-import Cart from "../Cart/Cart"
+import { useCartContext } from "../../context/CartContext"
 
 
 const Formulario = () => {
-    const { cartList } = Cart
+    const { cartList, totalPrice } = useCartContext()
+    const total = totalPrice()
+    const items = cartList
+
+
+
     const { register, handleSubmit, formState: { errors }, watch } = useForm({
         defaultValues: {
             email: '@gmail.com',
@@ -17,8 +22,8 @@ const Formulario = () => {
     const onSubmit = (data) => {
         const salesCollection = collection(db, "salesClient");
         addDoc(salesCollection, {
-            data,
-            cartList//al cargar cartList al servidor, da error y no permite cargarlos porque lo toma como una funcion.
+            data, total, items, date: serverTimestamp()
+            //error solucionado
         })
 
     }
@@ -73,7 +78,6 @@ const Formulario = () => {
                         </div>
                     )}
                 </div>
-
                 <input className="submit" type="submit" value="Continuar con el pago" />
             </form>
         </div>
