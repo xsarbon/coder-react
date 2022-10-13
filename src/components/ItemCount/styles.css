@@ -215,6 +215,7 @@
     }
     .itemAdd:hover{
         background-color: rgb(1, 68, 113);
+        color: white
     }
     
     .description{
