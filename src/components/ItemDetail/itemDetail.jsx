@@ -22,7 +22,7 @@ const ItemDetail = ({ listProduct }) => {
                     <h3 className="precio">${listProduct.price}</h3>
                     {
                         isAdded ?
-                            <NavLink to="/Cart"><button className="irAlCarrito">Terminar mi compra</button></NavLink>
+                            <NavLink to="/cart"><button className="irAlCarrito">Terminar mi compra</button></NavLink>
                             : <ItemCount product={listProduct} onAdd={onAdd} />
                     }
                 </section>

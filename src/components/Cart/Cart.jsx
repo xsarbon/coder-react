@@ -32,7 +32,11 @@ const Cart = () => {
             <div className="clearCart">
                 <button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button>
             </div>
-            <div className="startBuy"><button className="starBuy">Pagar</button></div>
+            <div className="startBuy">
+                <NavLink to={"/formulario"}>
+                    <button className="starBuy">Pagar</button>
+                </NavLink>
+            </div>
         </li>
 
     const noProducts = <li className="priceTotal">
