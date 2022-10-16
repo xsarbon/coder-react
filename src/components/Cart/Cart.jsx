@@ -3,10 +3,13 @@ import "../Cart/CartStyles.css"
 import { NavLink } from "react-router-dom"
 import { db } from "../firebase/firebase"
 import { getDocs, collection } from "firebase/firestore"
+import prueba from '../utils/storage'
 
 const Cart = () => {
     const productsCollection = collection(db, 'listProducts')
-    const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
+    const { cartList, totalPrice, removeProduct, cleanCart, clearLocal, savePPP } = useCartContext()
+    savePPP(cartList)
+
     const itemsList = cartList.map(prod =>
         <li className="containerProd" key={prod.id}>
             <div className="containerMainProd" >
@@ -31,7 +34,7 @@ const Cart = () => {
                 <h2 className="priceTotal">Total: ${totalPrice()}</h2>
             </div>
             <div className="clearCart">
-                <button className="cleanCart" onClick={cleanCart}>Borrar Carrito</button>
+                <button className="cleanCart" onClick={(cleanCart, clearLocal)}>Borrar Carrito</button>
             </div>
             <div className="startBuy">
                 <NavLink to={"/formulario"}>

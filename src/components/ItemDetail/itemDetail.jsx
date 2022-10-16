@@ -7,11 +7,12 @@ import { useCartContext } from "../../context/CartContext"
 const ItemDetail = ({ listProduct }) => {
 
     const [isAdded, setIsAdded] = useState(false)
-    const { addToCart, cartList } = useCartContext()
+    const { addToCart, saveLocal } = useCartContext()
     const onAdd = (listProduct, quantity) => {
         addToCart(listProduct, quantity)
         setIsAdded(true)
     }
+
     return (
         <div className="itemDetail">
             <div className="itemDetailContainer">
@@ -24,7 +25,7 @@ const ItemDetail = ({ listProduct }) => {
                         isAdded ?
                             <NavLink to="/cart">
                                 <button className="irAlCarrito">Terminar mi compra</button>
-                                </NavLink>
+                            </NavLink>
                             : <ItemCount product={listProduct} onAdd={onAdd} />
                     }
                 </section>

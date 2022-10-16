@@ -1,7 +1,17 @@
 import { createContext, useState, useContext } from "react"
 
+//Local Storage
+
+const savePPP = (cartList) => {
+    for (const prod of cartList) {
+        localStorage.setItem(JSON.stringify(prod.product), JSON.stringify(prod))
+    }
+}
+const clearLocal = (localStorage.clear)
 
 
+
+//Context
 const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 export function CartContextProvider({ children }) {
@@ -29,7 +39,9 @@ export function CartContextProvider({ children }) {
 
 
 
+
     const removeProduct = (id) => setCartList(cartList.filter(prod => prod.id != id))
+
 
     const cleanCart = () => setCartList([])
 
@@ -47,7 +59,9 @@ export function CartContextProvider({ children }) {
             cleanCart,
             totalPrice,
             totalQuantity,
-            cartList
+            cartList,
+            clearLocal,
+            savePPP
         }}>
             {children}
         </CartContext.Provider>
