@@ -11,6 +11,7 @@
     margin: auto;
     margin-bottom: 40px;
     border-radius: 7px;
+
 }
 .containerProd:hover{
     transform: scale(1.01);
@@ -135,4 +136,11 @@ background-color: rgba(225, 225, 225, 0.633);
 }
 .nameProd{
     width: 700px;
+}
+
+.link{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
 }

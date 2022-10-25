@@ -4,22 +4,34 @@ import { createContext, useState, useContext } from "react"
 
 const savePPP = (cartList) => {
     for (const prod of cartList) {
-        localStorage.setItem(JSON.stringify(prod.product), JSON.stringify(prod))
+        localStorage.setItem(JSON.stringify(prod.id), JSON.stringify(prod))
     }
 }
-const clearLocal = (localStorage.clear)
+function clearLocal() {
+    for (let i = 0; i < localStorage.length; i++) {
+        let id = localStorage.key(i);
+        localStorage.removeItem(JSON.stringify(localStorage.key(i)))
+    }
+
+}
+
 
 
 
 //Context
 const CartContext = createContext([])
+
 export const useCartContext = () => useContext(CartContext)
+
 export function CartContextProvider({ children }) {
     const totalPrice = () => {
         return cartList.reduce((acc, product) => acc += (product.price * product.quantity), 0)
     }
+
     const [cartList, setCartList] = useState([])
+
     const isInCart = (id) => cartList.find(prod => prod.id === id)
+
     const addToCart = (item, quantity) => {
         if (isInCart(item.id)) {
             const newCart = cartList.map(prod => {
@@ -40,13 +52,17 @@ export function CartContextProvider({ children }) {
 
 
 
-    const removeProduct = (id) => setCartList(cartList.filter(prod => prod.id != id))
+    const removeProduct = (id) => {
+        setCartList(cartList.filter(prod => prod.id != id))
+        localStorage.removeItem(JSON.stringify(id))
+        console.log("Borrado el item " + id)
+    }
 
 
-    const cleanCart = () => setCartList([])
-
-
-
+    const cleanCart = () => {
+        setCartList([])
+        localStorage.clear()
+    }
 
     const totalQuantity = () => {
         return cartList.reduce((acc, product) => acc += product.quantity, 0)

@@ -1,21 +1,27 @@
+/* Importamos NavLink desde react-router-dom */
 import { NavLink } from "react-router-dom"
-import { db } from "../firebase/firebase"
-import { getDocs, collection } from "firebase/firestore"
 
+
+/* Declaramos la funcion Item, pasandole como parametro product */
 const Item = ({ product }) => {
-    const productsCollection = collection(db, 'listProducts')
-    return (
-        <div className="card">
-            <img src={product.image} className="image"></img>
-            <div className="containerBtn">
-                <h2 className="producto">{product.product}</h2>
-                <p className="stock">Disponibles: <b>{product.stock}</b></p>
-                <button className="add">Agregar al carrito</button>
-                <NavLink className="add2cont" to={`/product/${product.id}`}><button className="add2">Ver detalle</button></NavLink>
 
+
+    /* La cual devuelve una serie de etiquetas HTML dinamica por cada producto recibido, al hacerle click al producto, redirigira al usuario a la pagina de detalle de ese producto */
+    return (
+        <NavLink className="link" to={`/product/${product.id}`}>
+            <div className="card">
+                <img src={product.image} className="image"></img>
+                <div className="containerBtn">
+                    <h2 className="producto">{product.product}</h2>
+                    <p className="precio">{product.price}</p>
+                    <p className="stock">Disponibles: <b>{product.stock}</b></p>
+                </div>
             </div>
-        </div>
+        </NavLink>
 
     )
 }
+
+
+/* Exportamos Item por Default */
 export default Item

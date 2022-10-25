@@ -1,9 +1,9 @@
 import React from "react";
 import '../ItemCount/ItemCount'
-import ItemList from "../itemList/itemList.jsx"
+import ItemList from "../itemList/ItemList.jsx"
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { db } from "../firebase/firebase"
+import { db } from "../firebase/Firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 

@@ -1,4 +1,4 @@
-import { db } from "../firebase/firebase"
+import { db } from "../firebase/Firebase"
 import { collection, addDoc, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
@@ -22,7 +22,6 @@ const Formulario = () => {
         const salesCollection = collection(db, "salesClient");
         addDoc(salesCollection, {
             data, total, items, date: serverTimestamp()
-            //error solucionado
         })
             .then((res) => {
                 alert("gracias por su compra, su ID de pago es " + res.id + "       datos guardados correctamente");
