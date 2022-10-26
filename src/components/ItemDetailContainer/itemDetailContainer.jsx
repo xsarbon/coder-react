@@ -3,8 +3,9 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from "react-router-dom"
 import { doc, getDoc, collection, } from "firebase/firestore"
 import { db } from "../firebase/Firebase"
+import Spinner from '../Spinner/Spinner'
 
-
+/* Funcion que trae todos los datos del producto y ademas su id guardado en la base de datos */
 const ItemDetailContainer = () => {
     const [listProduct, setListProduct] = useState({});
 
@@ -12,8 +13,8 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
+    /* Funcion que trae los productos guardados en la base de datos, y a cada uno le asigna como clave id y como valor, el ID de la base de datos, ademas conserva los datos que tenia ese mismo producto */
     useEffect(() => {
-
         const productsCollection = collection(db, 'listProducts')
         const refDoc = doc(productsCollection, id)
         getDoc(refDoc)
@@ -34,7 +35,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {!loading ? <ItemDetail listProduct={listProduct} /> : <p>Cargando</p>}
+            {!loading ? <ItemDetail listProduct={listProduct} /> : Spinner()}
         </>
     )
 }

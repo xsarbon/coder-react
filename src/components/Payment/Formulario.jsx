@@ -1,16 +1,25 @@
+/* Importamos la base de datos de firebase */
 import { db } from "../firebase/Firebase"
 import { collection, addDoc, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { edadValidator } from "../utils/validators";
 import './formStyles.css'
 import { useCartContext } from "../../context/CartContext"
+import Swal from 'sweetalert2'
 
-
+/* Declaramos la funcion Formulario */
 const Formulario = () => {
+
+    /* Importamos las funciones necesarios desde el cartContext */
     const { cartList, totalPrice, cleanCart } = useCartContext()
+
+    /* Declaramos la constante total y la igualamos a lo que devuelva la funcion totalPrice  */
     const total = totalPrice()
+
+    /* Declaramos la constante items y la igualamos a lo que devuelva la funcion cartList  */
     const items = cartList
 
+    /* Declaramos las funciones a utilizar de reack-hook-form y asignamos los valores por defecto que necesitamos*/
     const { register, handleSubmit, formState: { errors }, watch } = useForm({
         defaultValues: {
             email: '@gmail.com',
@@ -18,18 +27,26 @@ const Formulario = () => {
         }
     })
 
+
+    /* Funcion que guarda los datos de la compra y del cliente en la base de datos */
     const onSubmit = (data) => {
         const salesCollection = collection(db, "salesClient");
         addDoc(salesCollection, {
             data, total, items, date: serverTimestamp()
         })
+
+            /* Funcion que agradece al cliente y muestra por alert el ID de su compra */
             .then((res) => {
-                alert("gracias por su compra, su ID de pago es " + res.id + "       datos guardados correctamente");
-                cleanCart();
-                console.log("gracias por su compra, su ID de pago es " + res.id + "       datos guardados correctamente");
-                cleanCart();
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'gracias por su compra, su ID de pago es ' + res.id,
+                    showConfirmButton: true,
+                })
+
             })
 
+        /* Funcion para actualizar el stock  */
         const update = items.map((prod) => {
             const updateStock = doc(db, "listProducts", prod.id)
             const stock = prod.stock - prod.quantity
@@ -41,9 +58,13 @@ const Formulario = () => {
 
     }
 
-
+    /* Funcion para consultar al cliente si desea agregar el numero de telefono */
     const includeTel = watch('includeTel');
+
+
     return (
+
+        /* Estructura HTML y JS que verifica si los datos ingresados se cumplen con los requisitos de seguridad */
         <div className="formPayment">
             <h2>Formulario</h2>
             <form onSubmit={handleSubmit(onSubmit)}>

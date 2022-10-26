@@ -2,7 +2,8 @@
     width: 1200px;
     text-align: center;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 0px;
+    padding-top: 120px;
 }
 .containerProd{
     display: flex;
@@ -11,7 +12,7 @@
     margin: auto;
     margin-bottom: 40px;
     border-radius: 7px;
-
+    margin-top: 0px;
 }
 .containerProd:hover{
     transform: scale(1.01);
@@ -24,6 +25,7 @@ background-color: rgba(225, 225, 225, 0.633);
     width: 1200px;
     display: flex;
     justify-content: space-between;border-radius: 20px;
+    position: static;
 }
 .container{
     font-size: 22px;
@@ -68,6 +70,8 @@ background-color: rgba(225, 225, 225, 0.633);
     box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
     -webkit-box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.37);
+    margin-top: 0;
+    padding-top: 30px;
 }
 .priceTotal{
     font-size: 20px;

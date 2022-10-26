@@ -3,14 +3,16 @@ body{
   background-color: white;
 }
 .nav{
-  margin-top: 2.5%;
+  margin-top: 0px;
   width: 100%;
-  height: 20%;
+  height: 80px;
   background: rgb(5,0,89);
   box-shadow: 0px 10px 28px 3px rgba(46,46,46,0.31);
   -webkit-box-shadow: 0px 10px 28px 3px rgba(46,46,46,0.31);
   -moz-box-shadow: 0px 10px 28px 3px rgba(46,46,46,0.31);
   background: linear-gradient(342deg, rgba(5,0,89,1) 0%, rgba(9,9,121,1) 76%, rgba(0,165,199,1) 100%);
+  position: fixed;
+  z-index: 1;
 }
 .tamanio{
   display: flex;
@@ -29,51 +31,34 @@ body{
 h1{
   color: white;
 }
-
 .links{
-  display: flex;
-  height: 50px;
-  margin-top: -25px;
   width: 600px;
-  align-items: flex-start;
-}
-
-.etiqueta{
-  font-size: 20px;
-  text-decoration: none;
-  width: 100%;
-  cursor: pointer;
-  color: white;
-  border-radius: 3px;
-}
-.etiquetaa{
-  font-size: 20px;
-  padding: 3%;
-  text-decoration: none;
-  width: 100%;
-  cursor: pointer;
-  color: white;
-  border-radius: 3px;
-  height: 15px;
+  height: 40px;
+  margin-top: -6px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+}
+.etiqueta{
+  width: 110px;
+  height: 40px;
+  font-style: none;
+  list-style: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  transition: ease 0.2s;
+}
+.etiqueta:hover{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 37px 5px rgba(0,165,199,0.43);
+-webkit-box-shadow: 0px 0px 37px 5px rgba(0,165,199,0.43);
+-moz-box-shadow: 0px 0px 37px 5px rgba(0,165,199,0.43);
+color: rgb(0, 71, 129);
 }
 .cart{
   width: 2%;
+}
 
-}
-.etiquetaa:hover{
-  background-color: aliceblue;
-  border-radius: 6px;
-  box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
--webkit-box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
--moz-box-shadow: 0px 0px 64px -5px rgba(50,156,212,0.47);
-  transition: ease 0.3s;
-}
-.etiquetaa:hover a{
-  color: rgb(0, 71, 129);
-}
-img{
-  border-radius: 20px 20px 0 0;
-  background-color: white;
-}
+

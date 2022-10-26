@@ -1,6 +1,7 @@
 import Item from '../item/Item'
 
-const ItemList = ({ listProduct }) => { 
+/* Funcion que devuelve por cada producto un div con los parametros que utiliza */
+const ItemList = ({ listProduct }) => {
     return (
         <div className='main'>
             {listProduct.map(product => <Item key={product.id} product={product} stock={product.stock} initial={product.initial} />)}

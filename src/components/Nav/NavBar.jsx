@@ -4,6 +4,7 @@ import Cart from '../CartWidget/Cart'
 import { NavLink } from "react-router-dom"
 
 function NavBar() {
+    /* La funcion NavBar devuelve la sigueinte estructura */
     return (
         <div className='nav'>
             <div className='tamanio'>
@@ -13,19 +14,19 @@ function NavBar() {
 
                 <h1 className='titulo'>Tienda de tecnologia</h1>
                 <div className='links'>
-                    <NavLink className="etiquetaa" to="/">
+                    <NavLink to="/">
                         <button className='etiqueta' href="#">Inicio</button>
                     </NavLink>
-                    <NavLink className="etiquetaa" to="category/notebooks">
+                    <NavLink to="category/notebooks">
                         <button className='etiqueta' href="#">Notebooks</button>
                     </NavLink>
-                    <NavLink className="etiquetaa" to="category/celulares">
+                    <NavLink to="category/celulares">
                         <button className='etiqueta' href="#">Celulares</button>
                     </NavLink>
-                    <NavLink className="etiquetaa" to="category/audio">
+                    <NavLink to="category/audio">
                         <button className='etiqueta' href="#">Audio</button>
                     </NavLink>
-                    <NavLink className="etiquetaa" to="category/hogar">
+                    <NavLink to="category/hogar">
                         <button className='etiqueta' href="#">Hogar</button>
                     </NavLink>
                 </div>
